@@ -1,0 +1,212 @@
+@keyframes sparkle {
+  100% {
+    text-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white, 0 0 20px white;
+  }
+}
+
+.nav-links a.doy {
+  text-shadow: 0 0 20px white;
+  border-bottom: 2px solid white;
+}
+
+.nav-links :hover {
+  animation: sparkle 1.0s infinite alternate;
+  border-bottom: 2px solid white;
+}
+
+header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 40px 0;
+}
+
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--highlight);
+  transition: width 0.3s;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Story Section */
+.story-section {
+  padding: 60px 20px;
+  background-color: #fdfaf6;
+  background-image: url("https://www.designboom.com/wp-content/uploads/2020/07/01_World-Heritage-in-Danger_Hatra_794px.gif");
+  background-size: cover;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.story-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.story-title {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #3c2a21;
+  margin-bottom: 40px;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.story-box {
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.story-box:hover {
+  transform: translateY(-6px);
+}
+
+.story-box img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.story-text {
+  padding: 20px;
+}
+
+.story-text h3 {
+  font-size: 1.5rem;
+  color: #b05b3b;
+  margin-bottom: 10px;
+}
+
+.story-text p {
+  font-size: 1rem;
+  color: #3c2a21;
+  line-height: 1.6;
+}
+
+.story-doy {
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.story-doy img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+footer {
+  text-align: center;
+  color: white;
+  background-color: #2c3e50;
+  padding: 10px;
+  font-weight: bold;
+  margin-top: 60px;
+}
+
+/* =============================
+   ✅ Responsive Adjustments
+   ============================= */
+
+/* Tablet (≤768px) */
+@media (max-width: 768px) {
+  header {
+    padding: 30px 0;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+  }
+
+  .story-title {
+    font-size: 2rem;
+  }
+
+  .story-grid {
+    gap: 20px;
+  }
+
+  .story-text h3 {
+    font-size: 1.3rem;
+  }
+
+  .story-text p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile (≤480px) */
+@media (max-width: 480px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-link {
+    font-size: 0.95rem;
+  }
+
+  .story-title {
+    font-size: 1.7rem;
+  }
+
+  .story-text {
+    padding: 15px;
+  }
+
+  .story-text h3 {
+    font-size: 1.2rem;
+  }
+
+  .story-text p {
+    font-size: 0.9rem;
+  }
+
+  footer {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+}
